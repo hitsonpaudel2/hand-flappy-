@@ -1,9 +1,24 @@
-# 🐦 Hand Flappy PRO
+🐦 Hand Flappy PRO
 
-> **A Flappy Bird-style game controlled by your hand movements using your webcam.**
+A hand-controlled Flappy Bird-style game built with computer vision.
 
-🎮 **Play in your browser:**
-**https://hitsonpaudel2.github.io/hand-flappy-/**
+🎮 Two Ways to Play
+
+Hand Flappy PRO is available in two versions:
+
+💻 Desktop Version
+
+A Windows desktop game built with Python, Pygame, OpenCV, and MediaPipe.
+
+Download and run the desktop version on your computer.
+
+🌐 Browser Version
+
+A web version built with HTML, CSS, JavaScript, and MediaPipe, allowing you to play directly in your browser.
+
+
+👉 PLAY HAND FLAPPY PRO ONLINE 
+**[▶️ PLAY HAND FLAPPY PRO](https://hitsonpaudel2.github.io/hand-flappy-/)**
 
 ---
 
@@ -98,8 +113,6 @@ This allows the player to control the game naturally using hand movement instead
 ## 🌐 Play Online
 
 ### 🎮 Browser Version
-
-**[▶️ PLAY HAND FLAPPY PRO](https://hitsonpaudel2.github.io/hand-flappy-/)**
 
 No Python installation is required.
 

@@ -15,21 +15,83 @@ The project started as a **Python desktop game** and was later expanded into a *
 
 ### ✋ How it works
 
+
+Hand Flappy PRO has **two versions**: a Python desktop version and a browser version.
+
+### 💻 Desktop Version
+
+The original game runs on Windows using Python.
+
 ```text
 Webcam
    ↓
-MediaPipe Hand Tracking
+OpenCV
+   ↓
+MediaPipe Hands
    ↓
 Hand Movement Detection
    ↓
-JavaScript
+Python
    ↓
-Game Physics
+Pygame
    ↓
-🐦 Flappy Bird
+🐦 Hand Flappy PRO
 ```
 
-The browser version detects the movement of your hand through your webcam. When your hand moves upward quickly, the bird flaps.
+The desktop version uses **OpenCV** to capture the webcam, **MediaPipe** to detect the hand, and **Pygame** to run the game.
+
+Move your hand upward quickly to make the bird flap.
+
+---
+
+### 🌐 Browser Version
+
+The browser version brings the same idea to the web, so players can play without installing Python.
+
+```text
+Webcam
+   ↓
+MediaPipe Hands
+   ↓
+JavaScript Hand Movement Detection
+   ↓
+HTML Canvas
+   ↓
+🐦 Hand Flappy PRO
+```
+
+The browser version uses the **Web Camera API**, **MediaPipe Hands**, **JavaScript**, and **HTML Canvas**.
+
+Players simply open the game in their browser, allow camera access, and use their hand to control the bird.
+
+### ✋ Hand Control
+
+Both versions use a similar movement-based control system.
+
+The game tracks the five fingertips:
+
+```text
+Thumb    → 4
+Index    → 8
+Middle   → 12
+Ring     → 16
+Pinky    → 20
+```
+
+Their positions are averaged and smoothed to reduce noise. The game then detects **upward hand movement** and triggers the bird's flap.
+
+```text
+✋ Hand moves UP
+       ↓
+Movement detected
+       ↓
+Flap triggered
+       ↓
+🐦 Bird jumps
+```
+
+This allows the player to control the game naturally using hand movement instead of relying entirely on traditional keyboard controls.
+
 
 ---
 
@@ -72,24 +134,6 @@ Just:
 * ⚡ Runs directly in the browser
 
 ---
-
-## 🧠 Hand Control
-
-The browser version uses a similar control system to the original Python version.
-
-Instead of looking at only one finger, the game uses five fingertips:
-
-```text
-Thumb      → 4
-Index      → 8
-Middle     → 12
-Ring       → 16
-Pinky      → 20
-```
-
-Their positions are averaged and smoothed over several frames.
-
-The game then calculates the movement velocity of the hand.
 
 ### ✋ Move hand upward
 

@@ -1,191 +1,314 @@
 # 🐦 Hand Flappy PRO
 
-> A webcam-controlled Flappy Bird-style game where you control the bird using your hand.
+> **A Flappy Bird-style game controlled by your hand movements using your webcam.**
 
-![Python](https://img.shields.io/badge/Python-3.x-blue)
-![Pygame](https://img.shields.io/badge/Game-Pygame-green)
-![OpenCV](https://img.shields.io/badge/Computer%20Vision-OpenCV-red)
-![MediaPipe](https://img.shields.io/badge/Hand%20Tracking-MediaPipe-orange)
-![Status](https://img.shields.io/badge/Status-Playable-success)
+🎮 **Play in your browser:**
+**https://hitsonpaudel2.github.io/hand-flappy-/**
 
 ---
 
-## 🎮 About
+## 🎮 About the Project
 
-**Hand Flappy PRO** is a Python game inspired by Flappy Bird.
+**Hand Flappy PRO** is a hand-controlled Flappy Bird-style game that lets you control the bird using **real-time hand movement** instead of a keyboard.
 
-Instead of pressing a key to make the bird fly, you use your **webcam and hand movement**.
+The project started as a **Python desktop game** and was later expanded into a **browser version**, allowing people to play directly from a website.
 
-Raise your hand to flap.
-
-Try to pass through as many pipes as possible without crashing.
-
----
-
-## ✋ How it works
-
-The game uses:
-
-- **MediaPipe** → detects your hand
-- **OpenCV** → captures the webcam
-- **Pygame** → runs and displays the game
-- **Python** → connects everything together
-
-The basic flow is:
+### ✋ How it works
 
 ```text
 Webcam
    ↓
-OpenCV
+MediaPipe Hand Tracking
    ↓
-MediaPipe hand tracking
+Hand Movement Detection
    ↓
-Hand movement detected
+JavaScript
    ↓
-Flap
+Game Physics
    ↓
-Pygame game
+🐦 Flappy Bird
 ```
 
----
-
-## 🕹️ Controls
-
-| Key | Action |
-|---|---|
-| `ENTER` | Start / restart |
-| `P` | Pause |
-| `R` | Reposition windows |
-| `K` | Recalibrate hand tracking |
-| `C` | Mirror camera |
-| `F` | Show FPS |
-| `M` | Toggle sound |
-| `ESC` | Quit |
-
-### Hand control
-
-Raise your hand upward to make the bird flap.
+The browser version detects the movement of your hand through your webcam. When your hand moves upward quickly, the bird flaps.
 
 ---
 
-## 💻 Requirements
+## 🌐 Play Online
 
-You need:
+### 🎮 Browser Version
 
-- Windows PC
-- Python
-- Working webcam
-- Internet connection for installing dependencies
+**[▶️ PLAY HAND FLAPPY PRO](https://hitsonpaudel2.github.io/hand-flappy-/)**
+
+No Python installation is required.
+
+Just:
+
+1. Open the game.
+2. Allow camera access.
+3. Click **START GAME**.
+4. Move your hand upward to flap.
+5. Avoid the pipes.
+6. Try to beat your high score!
+
+> 📷 Camera access is required for hand control.
+
+---
+
+## ✨ Features
+
+* ✋ Real-time hand tracking
+* 📷 Webcam control
+* 🧠 MediaPipe hand detection
+* 🐦 Flappy Bird-style gameplay
+* 💥 Pipe collision detection
+* 🏆 Score system
+* 💾 Best score saved in the browser
+* 🎨 Multiple visual themes
+* 🎉 Score milestone celebrations
+* 💻 Python desktop version
+* 🌐 Browser version
+* 📱 Touch support
+* ⌨️ Keyboard testing controls
+* ⚡ Runs directly in the browser
+
+---
+
+## 🧠 Hand Control
+
+The browser version uses a similar control system to the original Python version.
+
+Instead of looking at only one finger, the game uses five fingertips:
+
+```text
+Thumb      → 4
+Index      → 8
+Middle     → 12
+Ring       → 16
+Pinky      → 20
+```
+
+Their positions are averaged and smoothed over several frames.
+
+The game then calculates the movement velocity of the hand.
+
+### ✋ Move hand upward
+
+```text
+Hand moves UP
+      ↓
+Upward velocity detected
+      ↓
+Flap triggered
+      ↓
+🐦 Bird jumps
+```
+
+This makes the control feel more natural than simply checking whether your finger is pointing upward.
+
+---
+
+## 🛠️ Technologies Used
+
+### Desktop Version
+
+* 🐍 Python
+* 🎮 Pygame
+* 📷 OpenCV
+* ✋ MediaPipe
+* 📦 PyInstaller
+
+### Browser Version
+
+* 🌐 HTML
+* 🎨 CSS
+* ⚡ JavaScript
+* ✋ MediaPipe Hands
+* 🎥 Web Camera API
+* 🖼️ HTML Canvas
+* 🚀 GitHub Pages
+
+---
+
+## 📁 Project Structure
+
+```text
+hand-flappy-/
+│
+├── browser/
+│   ├── index.html
+│   ├── style.css
+│   └── game.js
+│
+├── hand_flappy_PRO.py
+│
+├── dist/
+│   └── HandFlappyPRO/
+│
+└── README.md
+```
+
+> The exact files in the repository may change as the project continues to develop.
+
+---
+
+## 💻 Desktop Version
+
+The original version of Hand Flappy PRO was created with Python.
+
+The desktop version uses:
+
+* OpenCV for the webcam
+* MediaPipe for hand tracking
+* Pygame for the game
+* PyInstaller to create a Windows executable
+
+### Run from source
 
 Install the required Python packages:
 
 ```bash
-pip install -r requirements.txt
+pip install pygame opencv-python mediapipe
 ```
 
----
-
-## ▶️ Run the game
-
-Clone the repository:
-
-```bash
-git clone https://github.com/hitsonpaudel2/hand-flappy-.git
-```
-
-Enter the project folder:
-
-```bash
-cd hand-flappy-
-```
-
-Install the dependencies:
-
-```bash
-pip install -r requirements.txt
-```
-
-Start the game:
+Then run:
 
 ```bash
 python hand_flappy_PRO.py
 ```
 
-Allow camera access if Windows asks for permission.
+---
+
+## 📦 Windows Executable
+
+A Windows executable version can also be created using **PyInstaller**.
+
+Example:
+
+```bash
+pyinstaller --onedir --windowed --name HandFlappyPRO hand_flappy_PRO.py
+```
+
+The generated application can then be found inside:
+
+```text
+dist/HandFlappyPRO/
+```
 
 ---
 
-## 📷 Camera
+## 🌐 Browser Version
 
-The game uses your webcam for real-time hand tracking.
+The browser version was created so that people don't need to install Python or download the game.
 
-For the best experience:
+It uses:
 
-- Use a well-lit room
-- Keep your hand visible
-- Keep your hand inside the camera frame
-- Avoid very dark backgrounds
+```text
+HTML
+CSS
+JavaScript
+   +
+MediaPipe Hands
+   +
+Webcam
+   ↓
+Browser Game
+```
 
----
+The game is hosted using **GitHub Pages**.
 
-## 🏆 Features
-
-- ✋ Real-time hand tracking
-- 🎮 Webcam-controlled gameplay
-- 📈 Increasing difficulty
-- 🏆 High-score system
-- 🔥 Combo tracking
-- ✨ Particle effects
-- 🌅 Changing backgrounds
-- 🔊 Sound controls
-- ⏸️ Pause system
-- 🔄 Hand recalibration
-- 🪟 Separate game and camera windows
 
 ---
 
-## 🛠️ Built With
+## 🎯 Goal
 
-- Python
-- Pygame
-- OpenCV
-- MediaPipe
-- NumPy
-- PyVirtualCam
+The goal is simple:
 
----
+> **Move your hand upward and keep the bird flying.**
 
-## 🚧 Future Improvements
-
-Planned improvements:
-
-- [ ] Embedded camera inside the game window
-- [ ] Better UI
-- [ ] More game modes
-- [ ] Difficulty settings
-- [ ] Online leaderboard
-- [ ] Custom skins
-- [ ] Sound effects and music improvements
-- [ ] Windows executable release
+Avoid the pipes and try to get the highest score possible.
 
 ---
 
-## 👨‍💻 Author
+## 🚀 Future Plans
 
-**Hitson Paudel**
+This project is still being developed.
 
-Built as a learning project while exploring:
+Possible future improvements include:
 
-- Python
-- Game development
-- Computer vision
-- Hand tracking
-- Git & GitHub
+* 🌐 Online multiplayer
+* 🏆 Global leaderboard
+* 👥 Player profiles
+* 🎵 Sound effects and music
+* 🎨 More themes
+* 🐦 More characters
+* 📱 Better mobile support
+* 🎮 More control methods
+* ☁️ Online score storage
+* 🔥 Difficulty progression
+* 📊 Player statistics
+* 🥇 Global high-score system
 
 ---
 
-## ⭐ Support
+## 📸 Screenshots
+
+Screenshots and gameplay videos will be added here as the project develops.
+
+```text
+Coming soon...
+```
+
+---
+
+## 📚 What I Learned
+
+This project helped me learn and practice:
+
+* Python programming
+* JavaScript programming
+* HTML and CSS
+* Game development
+* Game physics
+* Collision detection
+* Computer vision
+* Hand tracking
+* MediaPipe
+* Webcam APIs
+* Canvas rendering
+* Git
+* GitHub
+* GitHub Pages
+* PyInstaller
+* Debugging
+* Building a project from desktop → web
+
+---
+
+## 👨‍💻 Developer
+
+**Hitson**
+
+Built as a learning project to explore **game development, computer vision, hand tracking, and web development**.
+
+---
+
+## ⭐ Support the Project
 
 If you like the project, consider giving it a ⭐ on GitHub!
 
-Thanks for checking out **Hand Flappy PRO** 🐦
+Every star helps motivate further development. 🚀
+
+---
+
+## 📜 License
+
+This project is currently intended as a personal learning project.
+
+More information about the license will be added as the project develops.
+
+---
+
+# 🐦 Keep Flying!
+
+**Move your hand. Control the bird. Beat your score.**
+

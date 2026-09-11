@@ -1,18 +1,18 @@
-🐦 Hand Flappy PRO
+## 🐦 Hand Flappy PRO
 
 A hand-controlled Flappy Bird-style game built with computer vision.
 
-🎮 Two Ways to Play
+## 🎮 Two Ways to Play
 
 Hand Flappy PRO is available in two versions:
 
-💻 Desktop Version
+## 💻 Desktop Version
 
 A Windows desktop game built with Python, Pygame, OpenCV, and MediaPipe.
 
 Download and run the desktop version on your computer.
 
-🌐 Browser Version
+## 🌐 Browser Version
 
 A web version built with HTML, CSS, JavaScript, and MediaPipe, allowing you to play directly in your browser.
 

@@ -11,7 +11,8 @@ Hand Flappy PRO is available in two versions:
 A Windows desktop game built with Python, Pygame, OpenCV, and MediaPipe.
 
 Download and run the desktop version on your computer.
-👉 **[⬇️ Download Hand Flappy PRO for Windows] (https://github.com/hitsonpaudel2/hand-flappy-/releases/tag/v1.0.0)**
+
+👉 **[⬇️ Download Hand Flappy PRO for Windows](https://github.com/hitsonpaudel2/hand-flappy-/releases/tag/v1.0.0)**
 
 ### 🌐 Browser Version
 

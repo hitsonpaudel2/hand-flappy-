@@ -1,0 +1,24 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+
+# Virtual environments
+.venv/
+venv/
+env/
+
+# PyInstaller
+build/
+dist/
+*.spec
+
+# Game-generated data
+hand_flappy_highscore.json
+
+# IDE
+.vscode/
+
+# OS
+.DS_Store
+Thumbs.db
